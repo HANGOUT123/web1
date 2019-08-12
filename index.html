@@ -11,49 +11,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	<link href="style.css" rel="stylesheet">
-	<script>
-		window.fbAsyncInit = function() {
-			FB.init({
-				appId: '580538759017397',
-				cookie: true, // enable cookies to allow the server to access
-				// the session
-				xfbml: true, // parse social plugins on this page
-				version: 'v4.0' // The Graph API version to use for the call
-			});
 
-			// Now that we've initialized the JavaScript SDK, we call
-			// FB.getLoginStatus().  This function gets the state of the
-			// person visiting this page and can return one of three states to
-			// the callback you provide.  They can be:
-			//
-			// 1. Logged into your app ('connected')
-			// 2. Logged into Facebook, but not your app ('not_authorized')
-			// 3. Not logged into Facebook and can't tell if they are logged into
-			//    your app or not.
-			//
-			// These three cases are handled in the callb ack function.
-
-			var callback = function(response) {
-				console.log(response);
-				//statusChangeCallback(response);
-				if (response.status === 'connected') {
-					document.querySelector('#authBtn').value = 'Logout';
-				} else {
-					document.querySelector('#authBtn').value = 'Login';
-				}
-			}
-			FB.getLoginStatus(callback);
-
-		};
-		(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s);
-			js.id = id;
-			js.src = "https://connect.facebook.net/en_US/sdk.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
 </head>
 
 <body>
@@ -331,7 +289,49 @@
 		</div>
 	</footer>
 	<input class="btn btn-primary" type="button" id="authBtn" value="Checking...">
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId: '580538759017397',
+				cookie: true, // enable cookies to allow the server to access
+				// the session
+				xfbml: true, // parse social plugins on this page
+				version: 'v4.0' // The Graph API version to use for the call
+			});
 
+			// Now that we've initialized the JavaScript SDK, we call
+			// FB.getLoginStatus().  This function gets the state of the
+			// person visiting this page and can return one of three states to
+			// the callback you provide.  They can be:
+			//
+			// 1. Logged into your app ('connected')
+			// 2. Logged into Facebook, but not your app ('not_authorized')
+			// 3. Not logged into Facebook and can't tell if they are logged into
+			//    your app or not.
+			//
+			// These three cases are handled in the callb ack function.
+
+			var callback = function(response) {
+				console.log(response);
+				//statusChangeCallback(response);
+				if (response.status === 'connected') {
+					document.querySelector('#authBtn').value = 'Logout';
+				} else {
+					document.querySelector('#authBtn').value = 'Login';
+				}
+			}
+			FB.getLoginStatus(callback);
+
+		};
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 
 </body>
 
