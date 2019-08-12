@@ -315,11 +315,16 @@
 			 if(response.status === 'connected'){
 				 console.log('Logged in and authenticated');
 			 }else {
-			 	console.log(Not authenticated);
+			 	console.log('Not authenticated');
 			 }
 		 }
 	</script>
 
+
+	<fb:login-button
+	  scope="public_profile,email"
+	  onlogin="checkLoginState();">
+	</fb:login-button>
 </body>
 
 </html>
